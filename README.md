@@ -1,2 +1,2 @@
 # Upload
-class suite to create a predictable file upload inter
+class suite to create a predictable file upload interface
