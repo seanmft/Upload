@@ -43,7 +43,8 @@ class UploadedFileTest extends \PHPUnit_Framework_TestCase
     public function testExceptionOnFileError( ){
         $_files = $this->_files;
         $_files['error'] = UPLOAD_ERR_INI_SIZE;
-        $this->expectExceptionMessage(
+        $this->setExpectedException(
+            '\Upload\UploadedFileException',
             'The file '.$this->_files['name'].' exceeds the server maximum file size'
         );
         new UploadedFile($_files);

@@ -78,7 +78,10 @@ class UploadsTest extends \PHPUnit_Framework_TestCase
     * @expectedException RuntimeException
     */
     public function testFailEmptyFilesGlobal(){
-        $this->expectExceptionMessage('The $_FILES super-global array is empty; nothing to do');
+        $this->setExpectedException(
+            '\RuntimeException',
+            'The $_FILES super-global array is empty; nothing to do'
+        );
         $u = new Uploads();
     }//\
 
